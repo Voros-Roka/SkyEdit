@@ -1,0 +1,66 @@
+.tab_container
+{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	overflow: hidden;
+}
+
+.tab_panel_container
+{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	overflow: hidden;
+}
+
+.tab_panel_content
+{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	overflow-y: auto;
+}
+
+.editor_tab_container
+{
+	width: 100vw;
+	height: 100vh;
+}
+
+.tab_panel_hidden
+{
+	visibility: hidden !important;
+	display: none !important;
+}
+
+/*Panel Colors and Design*/
+/*Level 0*/
+.tab_panel
+{
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(var(--surface));
+	overflow: hidden;
+	/*background-color: green;*/
+}
+/*Level 1*/
+.tab_panel .tab_panel .tab_panel
+{
+	/*background-color: red;*/
+}
+/*Level 2*/
+.tab_panel .tab_panel .tab_panel .tab_panel
+{
+	/*background-color: purple;*/
+}
+/*Level 3*/
+.tab_panel .tab_panel .tab_panel .tab_panel .tab_panel
+{
+	/*background-color: grey;*/
+}
+/*Level 4*/
+.tab_panel .tab_panel .tab_panel .tab_panel .tab_panel .tab_panel
+{
+	/*background-color: blue;*/
+}

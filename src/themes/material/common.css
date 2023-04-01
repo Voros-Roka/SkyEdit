@@ -1,0 +1,140 @@
+:root
+{
+	--hover_state_layer_brightness: 92%;
+	--focus_state_layer_brightness: 88%;
+	--pressed_state_layer_brightness: 88%;
+	--dragged_state_layer_brightness: 84%;
+
+	--hover_state_layer_opacity: 8%;
+	--focus_state_layer_opacity: 12%;
+	--pressed_state_layer_opacity: 12%;
+	--dragged_state_layer_opacity: 16%;
+
+/*Font*/
+	/*Display*/
+	--display_small_font: Sans-serif;
+	--display_small_line_height: 2.75rem;
+	--display_small_size: 2.25rem;
+	--display_small_tracking: 0;
+	--display_small_weight: 400;
+
+	--display_medium_font: Sans-serif;
+	--display_medium_line_height: 3.25rem;
+	--display_medium_size: 2.8125rem;
+	--display_medium_tracking: 0;
+	--display_medium_weight: 400;
+
+	--display_large_font: Sans-serif;
+	--display_large_line_height: 4rem;
+	--display_large_size: 3.5625rem;
+	--display_large_tracking: -0.25;
+	--display_large_weight: 400;
+
+	/*Title*/
+	--title_small_font: Sans-serif;
+	--title_small_line_height: 1.25rem;
+	--title_small_size: 0.875rem;
+	--title_small_tracking: 0.1;
+	--title_small_weight: 500;
+
+	--title_medium_font: Sans-serif;
+	--title_medium_line_height: 1.5rem;
+	--title_medium_size: 1rem;
+	--title_medium_tracking: 0.16;
+	--title_medium_weight: 500;
+
+	--title_large_font: Sans-serif;
+	--title_large_line_height: 1.75rem;
+	--title_large_size: 1.375rem;
+	--title_large_tracking: 0;
+	--title_large_weight: 400;
+
+	/*Label*/
+	--label_small_font: Sans-serif;
+	--label_small_line_height: 1rem;
+	--label_small_size: 0.6875rem;
+	--label_small_tracking: 0.5;
+	--label_small_weight: 500;
+
+	--label_medium_font: Sans-serif;
+	--label_medium_line_height: 1rem;
+	--label_medium_size: 0.751rem;
+	--label_medium_tracking: 0.5;
+	--label_medium_weight: 500;
+
+	--label_large_font: Sans-serif;
+	--label_large_line_height: 1.25rem;
+	--label_large_size: 0.875rem;
+	--label_large_tracking: 0.1;
+	--label_large_weight: 400;
+
+	/*Body*/
+	--body_small_font: Sans-serif;
+	--body_small_line_height: 1rem;
+	--body_small_size: 0.75rem;
+	--body_small_tracking: 0.4;
+	--body_small_weight: 400;
+
+	--body_medium_font: Sans-serif;
+	--body_medium_line_height: 1.25rem;
+	--body_medium_size: 0.875rem;
+	--body_medium_tracking: 0.25;
+	--body_medium_weight: 400;
+
+	--body_large_font: Sans-serif;
+	--body_large_line_height: 1.5rem;
+	--body_large_size: 1rem;
+	--body_large_tracking: 0.5;
+	--body_large_weight: 400;
+}
+
+.visually_hidden
+{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+*
+{
+	padding: 0;
+	margin: 0;
+	border-style: solid;
+	border-width: 0px;
+	outline-style: solid;
+	outline-width: 0px;
+	outline-offset: 0px;
+}
+
+*:focus-visible
+{
+	outline: 0;
+}
+
+
+body, html
+{
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(var(--background));
+}
+
+.editor_container
+{
+	width: 100vw;
+	height: 100vh;
+}
+
+.file_dropzone
+{
+
+}
+
+.file_dropzone_mark
+{
+	/*filter: brightness(50%);
+	backdrop-filter: brightness(50%);*/
+}

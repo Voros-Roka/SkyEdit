@@ -1,0 +1,161 @@
+/*Colors and Design*/
+/*Level 0*/
+
+/*
+ * Tab Lists
+ */
+
+.tab_list
+{
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	height: 48px;
+	min-height: 48px;
+
+	overflow-x: auto;
+
+	font-family: var(--title_small_font);
+	font-weight: var(--title_small_weight);
+	font-size: var(--title_small_size);
+	line-height: var(--title_small_line_height);
+	letter-spacing: var(--title_small_tracking);
+}
+
+.editor_tab_list
+{
+	align-items: flex-start;
+}
+
+/*
+ *	Tabs
+ */
+
+.tab
+{
+	box-sizing: border-box;
+	border-radius: 2px 2px 0px 0px;
+	height: 48px;
+	min-height: 48px;
+	min-width: 48px;
+	border-width: 0px 0px 1px 0px;
+	border-color: rgb(var(--surface_variant));
+	color: rgb(var(--on_surface_variant));
+
+	background-color: rgb(var(--surface));
+
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab_normal
+{
+	flex: 1;
+}
+
+.tab_savegame
+{
+	flex: 0 0 auto;
+}
+
+.tab_file_open
+{
+	flex: 0 0 auto;
+}
+
+.tab_enabled, .tab:focus, .tab:focus-within
+{
+	color: rgb(var(--primary));
+	border-bottom-width: 2px;
+	border-bottom-color: rgb(var(--primary));
+}
+
+.tab:focus, .tab:focus-within
+{
+	filter: brightness(var(--focus_state_layer_brightness));
+	backdrop-filter: brightness(var(--focus_state_layer_brightness));
+}
+
+.tab:hover
+{
+	filter: brightness(var(--hover_state_layer_brightness));
+	backdrop-filter: brightness(var(--hover_state_layer_brightness));
+
+}
+
+.tab:active
+{
+	filter: brightness(var(--pressed_state_layer_brightness));
+	backdrop-filter: brightness(var(--pressed_state_layer_brightness));
+}
+
+.tab:focus-visible
+{
+	filter: brightness(var(--focus_state_layer_brightness));
+	backdrop-filter: brightness(var(--focus_state_layer_brightness));
+
+	outline-style: solid;
+	outline-width: 3px;
+	outline-offset: -3px;
+	outline-color: rgb(var(--primary));
+}
+
+.tab_label
+{
+	box-sizing: border-box;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+/*Level 1*/
+.tab_panel .tab_panel .tab
+{
+	/*background-color: red;*/
+}
+/*Level 2*/
+.tab_panel .tab_panel .tab_panel .tab
+{
+	/*background-color: purple;*/
+}
+/*Level 3*/
+.tab_panel .tab_panel .tab_panel .tab_panel .tab
+{
+	/*background-color: grey;*/
+}
+/*Level 4*/
+.tab_panel .tab_panel .tab_panel .tab_panel .tab_panel .tab
+{
+	/*background-color: blue;*/
+}
+
+/*
+ * Tab buttons
+ */
+
+.tab_savegame_download_button, .tab_savegame_save_button
+{
+	margin-left: 6px;
+	margin-right: 6px;
+
+	padding-right: 24px;
+	padding-left: 24px;
+
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(var(--outline));
+	color: rgb(var(--on_surface_variant));
+	background-color: inherit;
+}
+
+.tab_savegame_save_button_hidden
+{
+	visibility: hidden !important;
+	display: none !important;
+}
+
+.tab_savegame_download_button_hidden
+{
+	visibility: hidden !important;
+	display: none !important;
+}

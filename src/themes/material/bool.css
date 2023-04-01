@@ -1,0 +1,132 @@
+.bool_label
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+    align-items: center;
+	margin: 4px;
+	height: 56px;
+
+	font-family: var(--label_large_font);
+	font-weight: var(--label_large_weight);
+	font-size: var(--label_large_size);
+	line-height: var(--label_large_line_height);
+	letter-spacing: var(--label_large_tracking);
+	color: rgb(var(--on_surface));
+
+	align-self: flex-start;
+}
+
+.bool_reset_hidden
+{
+	visibility: hidden !important;
+	/*display: none !important;*/
+}
+
+.bool_text
+{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	height: 56px;
+}
+
+.bool_input_container
+{
+	box-sizing: border-box;
+	height: 56px;
+	width: 48px;
+	border-style: solid;
+	border-radius: 0px;
+	border-width: 0px;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bool_input
+{
+	appearance: none;
+	box-sizing: border-box;
+	cursor: pointer;
+	height: 18px;
+	width: 18px;
+	border-radius: 11px;
+	border-width: 0px;
+	background-color: transparent;
+}
+
+.bool_input:focus
+{
+	box-shadow: 0px 0px 0px 11px rgba(var(--primary),var(--focus_state_layer_opacity));
+}
+
+.bool_input:active
+{
+	box-shadow: 0px 0px 0px 11px rgba(var(--primary),var(--pressed_state_layer_opacity));
+}
+
+.bool_input:hover
+{
+	box-shadow: 0px 0px 0px 11px rgba(var(--primary),var(--hover_state_layer_opacity));
+}
+
+.bool_input:focus-within
+{
+	box-shadow: 0px 0px 0px 11px rgba(var(--primary),var(--focus_state_layer_opacity));
+}
+
+.bool_input:focus-visible
+{
+	box-shadow: 0px 0px 0px 11px rgba(var(--primary),var(--focus_state_layer_opacity));
+
+	outline-style: solid;
+	outline-width: 3px;
+	outline-offset: 11px;
+	outline-color: rgb(var(--primary));
+}
+
+.bool_input:after
+{
+	content: "";
+	box-sizing: border-box;
+
+	height: 18px;
+	width: 18px;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 2px;
+	border-color: rgb(var(--outline));
+	background-color: rgb(var(--on_surface));
+
+
+	color: rgb(var(--on_primary));
+}
+
+.bool_input:checked
+{
+}
+
+.bool_input:checked:after
+{
+	content: "\2714";
+	box-sizing: border-box;
+	height: 18px;
+	width: 18px;
+
+	border-style: solid;
+	border-radius: 0px;
+	border-width: 0px;
+	border-color: rgb(var(--outline));
+
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	background-color: rgb(var(--primary));
+
+	color: rgb(var(--on_primary));
+}

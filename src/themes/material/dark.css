@@ -1,0 +1,29 @@
+:root
+{
+	--primary: 249,189,25;
+	--secondary: 246,189,70;
+	--tertiary: 253,187,74;
+	--error: 255,180,171;
+	--background: 30,27,22;
+	--outline: 153,143,128;
+
+	--on_primary: 64,45,0;
+	--on_secondary: 65,45,0;
+	--on_tertiary: 67,44,0;
+	--on_error: 105,0,5;
+	--on_background: 233,225,216;
+
+	--primary_container: 91,67,0;
+	--secondary_container: 93,66,0;
+	--tertiary_container: 97,64,0;
+	--error_container: 147,0,10;
+	--surface: 30,27,22;
+	--surface_variant: 77,70,57;
+
+	--on_primary_container: 255,223,159;
+	--on_secondary_container: 255,222,165;
+	--on_tertiary_container: 255,221,175;
+	--on_error_container: 255,218,214;
+	--on_surface: 233,225,216;
+	--on_surface_variant: 208,197,180;
+}

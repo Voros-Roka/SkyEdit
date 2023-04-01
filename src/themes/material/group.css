@@ -1,0 +1,18 @@
+
+
+.group_layout
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.group
+{
+	margin: 4px;
+	padding: 4px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(var(--outline));
+	color: rgb(var(--on_surface_variant));
+}

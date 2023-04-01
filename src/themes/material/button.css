@@ -1,0 +1,58 @@
+
+.button
+{
+	box-sizing: border-box;
+
+	background-color: rgb(var(--secondary_container));
+
+	margin: 0px;
+	padding: 0px;
+	height: 40px;
+
+	border-radius: 20px;
+	border-style: solid;
+	border-width: 20px;
+	border-color: rgb(var(--secondary_container));
+
+	font-family: var(--label_large_font);
+	font-weight: var(--label_large_weight);
+	font-size: var(--label_large_size);
+	line-height: var(--label_large_line_height);
+	letter-spacing: var(--label_large_tracking);
+	color: rgb(var(--on_secondary_container));
+
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:hover
+{
+	filter: brightness(var(--hover_state_layer_brightness));
+	backdrop-filter: brightness(var(--hover_state_layer_brightness));
+}
+
+.button:focus
+{
+	filter: brightness(var(--focus_state_layer_brightness));
+	backdrop-filter: brightness(var(--focus_state_layer_brightness));
+}
+
+.button:active
+{
+	filter: brightness(var(--pressed_state_layer_brightness));
+	backdrop-filter: brightness(var(--pressed_state_layer_brightness));
+}
+
+.button:focus-within
+{
+	filter: brightness(var(--focus_state_layer_brightness));
+	backdrop-filter: brightness(var(--focus_state_layer_brightness));
+}
+
+.button:focus-visible
+{
+	filter: brightness(var(--focus_state_layer_brightness));
+	backdrop-filter: brightness(var(--focus_state_layer_brightness));
+	box-shadow: 0px 0px 0px 3px rgba(var(--primary));
+}
