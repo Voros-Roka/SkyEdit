@@ -833,20 +833,26 @@ export class EoS_DataBitView
 		let mask = ((0x01 << bitCount)-1);
 		value &= mask;
 
-		let val_array = new ArrayBuffer(2);
+		let val_array = new ArrayBuffer(3);
 		let val_view = new DataView(val_array);
 		val_view.setInt16(0,value,littleEndian);
 
-		let mask_array = new ArrayBuffer(2);
+		let mask_array = new ArrayBuffer(3);
 		let mask_view = new DataView(mask_array);
 		mask_view.setUint16(0,mask,littleEndian);
 
 		if((unit_bit_offset + bitCount) > 16)
 		{
-			let original = this.#dataview.getUint32(unit_offset, true);
-			original &= ~(mask_view.getUint16(0,true) << unit_bit_offset);
-			original |= val_view.getUint16(0,true) << unit_bit_offset;
-			this.#dataview.setUint32(unit_offset, original, true);
+			let original_16 = this.#dataview.getUint16(unit_offset,true);
+			let original_8 = this.#dataview.getUint16(unit_offset+1,true);
+			original_16 &= ~(mask_view.getUint16(0,true) << unit_bit_offset);
+			original_8 &= ~(mask_view.getUint16(1,true) << unit_bit_offset);
+
+			original_16 |= val_view.getUint16(0,true) << unit_bit_offset;
+			original_8 |= val_view.getUint16(1,true) << unit_bit_offset;
+
+			this.#dataview.setUint8(unit_offset+1,original_8,true);
+			this.#dataview.setUint16(unit_offset,original_16,true);
 		}
 		else
 		{
@@ -865,20 +871,26 @@ export class EoS_DataBitView
 		let mask = ((0x01 << bitCount)-1);
 		value &= mask;
 
-		let val_array = new ArrayBuffer(2);
+		let val_array = new ArrayBuffer(3);
 		let val_view = new DataView(val_array);
 		val_view.setUint16(0,value,littleEndian);
 
-		let mask_array = new ArrayBuffer(2);
+		let mask_array = new ArrayBuffer(3);
 		let mask_view = new DataView(mask_array);
 		mask_view.setUint16(0,mask,littleEndian);
 
 		if((unit_bit_offset + bitCount) > 16)
 		{
-			let original = this.#dataview.getUint32(unit_offset, true);
-			original &= ~(mask_view.getUint16(0,true) << unit_bit_offset);
-			original |= val_view.getUint16(0,true) << unit_bit_offset;
-			this.#dataview.setUint32(unit_offset, original, true);
+			let original_16 = this.#dataview.getUint16(unit_offset,true);
+			let original_8 = this.#dataview.getUint16(unit_offset+1,true);
+			original_16 &= ~(mask_view.getUint16(0,true) << unit_bit_offset);
+			original_8 &= ~(mask_view.getUint16(1,true) << unit_bit_offset);
+
+			original_16 |= val_view.getUint16(0,true) << unit_bit_offset;
+			original_8 |= val_view.getUint16(1,true) << unit_bit_offset;
+
+			this.#dataview.setUint8(unit_offset+1,original_8,true);
+			this.#dataview.setUint16(unit_offset,original_16,true);
 		}
 		else
 		{
@@ -1366,10 +1378,10 @@ export class EoS_DataBitView
 
 	setInt16Array(bitOffset=0, length, value, littleEndian, bitCount = 16)
 	{
-		let val_array = new ArrayBuffer(2);
+		let val_array = new ArrayBuffer(3);
 		let val_view = new DataView(val_array);
 
-		let mask_array = new ArrayBuffer(2);
+		let mask_array = new ArrayBuffer(3);
 		let mask_view = new DataView(mask_array);
 
 		let mask = ((0x01 << bitCount)-1);
@@ -1387,10 +1399,16 @@ export class EoS_DataBitView
 
 			if((unit_bit_offset + bitCount) > 16)
 			{
-				let original = this.#dataview.getUint32(unit_offset, true);
-				original &= ~(mask_view.getUint16(0,true) << unit_bit_offset);
-				original |= val_view.getUint16(0,true) << unit_bit_offset;
-				this.#dataview.setUint32(unit_offset, original, true);
+				let original_16 = this.#dataview.getUint16(unit_offset,true);
+				let original_8 = this.#dataview.getUint16(unit_offset+1,true);
+				original_16 &= ~(mask_view.getUint16(0,true) << unit_bit_offset);
+				original_8 &= ~(mask_view.getUint16(1,true) << unit_bit_offset);
+
+				original_16 |= val_view.getUint16(0,true) << unit_bit_offset;
+				original_8 |= val_view.getUint16(1,true) << unit_bit_offset;
+
+				this.#dataview.setUint8(unit_offset+1,original_8,true);
+				this.#dataview.setUint16(unit_offset,original_16,true);
 			}
 			else
 			{
@@ -1406,10 +1424,10 @@ export class EoS_DataBitView
 	setUint16Array(bitOffset=0, length, value, littleEndian, bitCount = 16)
 	{
 
-		let val_array = new ArrayBuffer(2);
+		let val_array = new ArrayBuffer(3);
 		let val_view = new DataView(val_array);
 
-		let mask_array = new ArrayBuffer(2);
+		let mask_array = new ArrayBuffer(3);
 		let mask_view = new DataView(mask_array);
 
 		let mask = ((0x01 << bitCount)-1);
@@ -1427,10 +1445,17 @@ export class EoS_DataBitView
 
 			if((unit_bit_offset + bitCount) > 16)
 			{
-				let original = this.#dataview.getUint32(unit_offset, true);
-				original &= ~(mask_view.getUint16(0,true) << unit_bit_offset);
-				original |= val_view.getUint16(0,true) << unit_bit_offset;
-				this.#dataview.setUint32(unit_offset, original, true);
+				let original_16 = this.#dataview.getUint16(unit_offset,true);
+				let original_8 = this.#dataview.getUint16(unit_offset+1,true);
+				original_16 &= ~(mask_view.getUint16(0,true) << unit_bit_offset);
+				original_8 &= ~(mask_view.getUint16(1,true) << unit_bit_offset);
+
+				original_16 |= val_view.getUint16(0,true) << unit_bit_offset;
+				original_8 |= val_view.getUint16(1,true) << unit_bit_offset;
+
+				this.#dataview.setUint8(unit_offset+1,original_8,true);
+				this.#dataview.setUint16(unit_offset,original_16,true);
+				
 			}
 			else
 			{
