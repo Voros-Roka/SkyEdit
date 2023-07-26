@@ -71,7 +71,7 @@ export class EoS_DataView
 			src = src.slice(0,length);
 			if(fillzero)
 			{
-				trg.fill(0,0,length);
+				trg.fill(0,src.length,length);
 			}
 		}
 		else
@@ -496,24 +496,56 @@ export class EoS_DataBitView
 
 	}
 
-	setString(encoding,byteOffset,value,length,fillzero=false)
+	setString(encoding,bitOffset,value,length,fillzero=false)
 	{
 		let src = (new TextEncoder(encoding)).encode(value);
 		let trg = null;
+		let bitCount = 8;
 		if(length)
 		{
-			trg = new Uint8Array(this.#dataview.buffer,byteOffset+this.#dataview.byteOffset,length);
+			trg = new Uint8Array(length);
 			src = src.slice(0,length);
 			if(fillzero)
 			{
-				trg.fill(0,0,length);
+				trg.fill(0,src.length,length);
 			}
 		}
 		else
 		{
-			trg = new Uint8Array(this.#dataview.buffer,byteOffset+this.#dataview.byteOffset);
+			trg = new Uint8Array();
 		}
 		trg.set(src);
+		
+		
+		
+		let tmp_array = new ArrayBuffer(1);
+		let tmp_view = new DataView(tmp_array);
+		let mask = 0xFF;
+
+		for(let i = 0; i < length; i++)
+		{
+			let unit_offset = ((bitOffset + this.#bit_offset) >> 3);
+			let unit_bit_offset = (bitOffset + this.#bit_offset) & 7;
+
+			trg[i] &= mask;
+			tmp_view.setUint8(0,trg[i]);
+
+			if((unit_bit_offset + bitCount) > 8)
+			{
+				let original = this.#dataview.getUint16(unit_offset, true);
+				original &= ~(mask << unit_bit_offset);
+				original |= tmp_view.getUint8(0,true) << unit_bit_offset;
+				this.#dataview.setUint16(unit_offset, original, true);
+			}
+			else
+			{
+				let original = this.#dataview.getUint8(unit_offset);
+				original &= ~(mask << unit_bit_offset);
+				original |= tmp_view.getUint8(0) << unit_bit_offset;
+				this.#dataview.setUint8(unit_offset, original);
+			}
+			bitOffset += bitCount;
+		}
 	}
 
 //////////////////////////////////////////
@@ -727,11 +759,11 @@ export class EoS_DataBitView
 
 		if(value == true)
 		{
-			data_8 &= ~(0x01 << unit_bit_offset);
+			data_8 |= 0x01 << unit_bit_offset;
 		}
 		else if(value == false)
 		{
-			data_8 |= 0x01 << unit_bit_offset;
+			data_8 &= ~(0x01 << unit_bit_offset);
 		}
 
 		this.#dataview.setUint8(unit_offset, data_8);
@@ -908,7 +940,7 @@ export class EoS_DataBitView
 
 		let mask = ((0x01 << bitCount)-1);
 
-		if(bitcount > 31)
+		if(bitCount > 31)
 		{
 			mask = 0xFFFFFFFF;
 		}
