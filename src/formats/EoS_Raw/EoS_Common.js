@@ -268,7 +268,7 @@ export class EoS_DataView
 		let result = [];
 		for(let i = 0; i < length; i++)
 		{
-			result.push(this.#dataview.getUint16(byteOffset + (i*4),littleEndian));
+			result.push(this.#dataview.getUint32(byteOffset + (i*4),littleEndian));
 		}
 		return result;
 	}
@@ -308,7 +308,7 @@ export class EoS_DataView
 	{
 		for(let i = 0; i < length; i++)
 		{
-			this.#dataview.setInt8(byteOffset + i);
+			this.#dataview.setInt8(byteOffset + i, value[i]);
 		}
 	}
 
@@ -316,7 +316,7 @@ export class EoS_DataView
 	{
 		for(let i = 0; i < length; i++)
 		{
-			this.#dataview.setUint8(byteOffset + i);
+			this.#dataview.setUint8(byteOffset + i, value[i]);
 		}
 	}
 
@@ -324,7 +324,7 @@ export class EoS_DataView
 	{
 		for(let i = 0; i < length; i++)
 		{
-			this.#dataview.setInt16(byteOffset + (i*2),littleEndian);
+			this.#dataview.setInt16(byteOffset + (i*2), value[i], littleEndian);
 		}
 	}
 
@@ -332,7 +332,7 @@ export class EoS_DataView
 	{
 		for(let i = 0; i < length; i++)
 		{
-			this.#dataview.setUint16(byteOffset + (i*2),littleEndian);
+			this.#dataview.setUint16(byteOffset + (i*2), value[i], littleEndian);
 		}
 	}
 
@@ -340,7 +340,7 @@ export class EoS_DataView
 	{
 		for(let i = 0; i < length; i++)
 		{
-			this.#dataview.setInt32(byteOffset + (i*4),littleEndian);
+			this.#dataview.setInt32(byteOffset + (i*4), value[i], littleEndian);
 		}
 	}
 
@@ -348,7 +348,7 @@ export class EoS_DataView
 	{
 		for(let i = 0; i < length; i++)
 		{
-			this.#dataview.setUint32(byteOffset + (i*4),littleEndian);
+			this.#dataview.setUint32(byteOffset + (i*4), value[i], littleEndian);
 		}
 	}
 
@@ -356,7 +356,7 @@ export class EoS_DataView
 	{
 		for(let i = 0; i < length; i++)
 		{
-			this.#dataview.setFloat32(byteOffset + (i*4),littleEndian);
+			this.#dataview.setFloat32(byteOffset + (i*4), value[i], littleEndian);
 		}
 	}
 }
