@@ -140,7 +140,7 @@ function onBoolArrayResetClick(event)
 
 function onBoolArrayChange(event)
 {
-	tgt = event.currentTarget;
+	let tgt = event.currentTarget;
 	let map = tgt.____map;
 	let data = tgt.____data;
 
