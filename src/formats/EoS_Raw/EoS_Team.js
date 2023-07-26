@@ -63,7 +63,7 @@ export class EoS_Team extends DataMapping
 
 	set index(value)
 	{
-		this.#view.setUint16Array(0x00000011,value,4,true,0x00000010);
+		this.#view.setUint16Array(0x00000011,4,value,true,0x00000010);
 	}
 
 	get members()
