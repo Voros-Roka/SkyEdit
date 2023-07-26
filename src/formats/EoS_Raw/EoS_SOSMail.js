@@ -107,7 +107,7 @@ export class EoS_SOSMail extends DataMapping
 
 	set unknown02C(value)
 	{
-		this.#view.setUint8Array(0x0000002C,value,8,8);
+		this.#view.setUint8Array(0x0000002C,8,value,8);
 	}
 
 	get unknown06C()
@@ -117,7 +117,7 @@ export class EoS_SOSMail extends DataMapping
 
 	set unknown06C(value)
 	{
-		this.#view.setUint8Array(0x0000006C,value,8,8);
+		this.#view.setUint8Array(0x0000006C,8,value,8);
 	}
 
 	get language()
@@ -142,12 +142,12 @@ export class EoS_SOSMail extends DataMapping
 
 	get unknown100()
 	{
-		return this.#view.getUint32Array(0x0000006C,9,32);
+		return this.#view.getUint32Array(0x00000100,9,32);
 	}
 
 	set unknown100(value)
 	{
-		this.#view.setUint32Array(0x0000006C,value,9,32);
+		this.#view.setUint32Array(0x00000100,9,value,true,32);
 	}
 
 	get unknown220()
@@ -157,7 +157,7 @@ export class EoS_SOSMail extends DataMapping
 
 	set unknown220(value)
 	{
-		this.#view.setUint32Array(0x00000220,value,18,32);
+		this.#view.setUint32Array(0x00000220,18,value,true,32);
 	}
 
 	get unknown460()
@@ -187,7 +187,7 @@ export class EoS_SOSMail extends DataMapping
 
 	set unknown476(value)
 	{
-		this.#view.setUint8Array(0x00000476,value,8,8);
+		this.#view.setUint8Array(0x00000476,8,value,8);
 	}
 
 	get unknown4B6()

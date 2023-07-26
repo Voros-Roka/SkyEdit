@@ -66,7 +66,7 @@ export class EoS_Unknown extends DataMapping
 
 	set unknown000(value)
 	{
-		this.#view.setUint32Array(0x00000000,value,0x00000010,0x00000020);
+		this.#view.setUint32Array(0x00000000,0x00000010,value,true,0x00000020);
 	}
 
 	get unknown200()
@@ -81,12 +81,12 @@ export class EoS_Unknown extends DataMapping
 
 	get unknownD00()
 	{
-		return this.#view.getBoolArray(0x00000D00,0x00000010,0x00000001);
+		return this.#view.getBoolArray(0x00000D00,0x00000010);
 	}
 
 	set unknownD00(value)
 	{
-		this.#view.setBoolArray(0x00000D00,value,0x00000010,0x00000001);
+		this.#view.setBoolArray(0x00000D00,0x00000010,value);
 	}
 
 	get unknownD10()
@@ -96,7 +96,7 @@ export class EoS_Unknown extends DataMapping
 
 	set unknownD10(value)
 	{
-		this.#view.setUint16Array(0x00000D10,value,0x0000001B,0x00000010);
+		this.#view.setUint16Array(0x00000D10,0x0000001B,value,true,0x00000010);
 	}
 
 	get unknownEC0()

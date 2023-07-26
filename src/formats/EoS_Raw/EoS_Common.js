@@ -287,24 +287,24 @@ export class EoS_DataView
 // SET ARRAY
 //////////////////////////////////////////
 
-	setBoolArray(byteOffset,value,bytelength)
+	setBoolArray(byteOffset,bytelength,value)
 	{
 		for(let i = 0; i < bytelength;i++)
 		{
 			let data = 0;
-			data |= value[i+0]?0x01:0x00;
-			data |= value[i+1]?0x02:0x00;
-			data |= value[i+2]?0x04:0x00;
-			data |= value[i+3]?0x08:0x00;
-			data |= value[i+4]?0x10:0x00;
-			data |= value[i+5]?0x20:0x00;
-			data |= value[i+6]?0x40:0x00;
-			data |= value[i+7]?0x80:0x00;
+			data |= value[(i*8)+0]?0x01:0x00;
+			data |= value[(i*8)+1]?0x02:0x00;
+			data |= value[(i*8)+2]?0x04:0x00;
+			data |= value[(i*8)+3]?0x08:0x00;
+			data |= value[(i*8)+4]?0x10:0x00;
+			data |= value[(i*8)+5]?0x20:0x00;
+			data |= value[(i*8)+6]?0x40:0x00;
+			data |= value[(i*8)+7]?0x80:0x00;
 			this.#dataview.setUint8(byteOffset + i,data);
 		}
 	}
 
-	setInt8Array(byteOffset=0, value, length)
+	setInt8Array(byteOffset=0, length, value)
 	{
 		for(let i = 0; i < length; i++)
 		{
@@ -312,7 +312,7 @@ export class EoS_DataView
 		}
 	}
 
-	setUint8Array(byteOffset=0, value, length)
+	setUint8Array(byteOffset=0, length, value)
 	{
 		for(let i = 0; i < length; i++)
 		{
@@ -320,7 +320,7 @@ export class EoS_DataView
 		}
 	}
 
-	setInt16Array(byteOffset=0, value, length, littleEndian)
+	setInt16Array(byteOffset=0, length, value, littleEndian)
 	{
 		for(let i = 0; i < length; i++)
 		{
@@ -328,7 +328,7 @@ export class EoS_DataView
 		}
 	}
 
-	setUint16Array(byteOffset=0, value, length, littleEndian)
+	setUint16Array(byteOffset=0, length, value, littleEndian)
 	{
 		for(let i = 0; i < length; i++)
 		{
@@ -336,7 +336,7 @@ export class EoS_DataView
 		}
 	}
 
-	setInt32Array(byteOffset=0, value, length, littleEndian)
+	setInt32Array(byteOffset=0, length, value, littleEndian)
 	{
 		for(let i = 0; i < length; i++)
 		{
@@ -344,7 +344,7 @@ export class EoS_DataView
 		}
 	}
 
-	setUint32Array(byteOffset=0, value, length, littleEndian)
+	setUint32Array(byteOffset=0, length, value, littleEndian)
 	{
 		for(let i = 0; i < length; i++)
 		{
@@ -352,7 +352,7 @@ export class EoS_DataView
 		}
 	}
 
-	setFloat32Array(byteOffset=0, value, length, littleEndian)
+	setFloat32Array(byteOffset=0, length, value, littleEndian)
 	{
 		for(let i = 0; i < length; i++)
 		{
@@ -915,11 +915,11 @@ export class EoS_DataBitView
 
 		value &= mask;
 
-		let val_array = new ArrayBuffer(4);
+		let val_array = new ArrayBuffer(5);
 		let val_view = new DataView(val_array);
 		val_view.setInt32(0,value,littleEndian);
 
-		let mask_array = new ArrayBuffer(4);
+		let mask_array = new ArrayBuffer(5);
 		let mask_view = new DataView(mask_array);
 		mask_view.setUint32(0,mask,littleEndian);
 
@@ -959,11 +959,11 @@ export class EoS_DataBitView
 
 		value &= mask;
 
-		let val_array = new ArrayBuffer(4);
+		let val_array = new ArrayBuffer(5);
 		let val_view = new DataView(val_array);
 		val_view.setUint32(0,value,littleEndian);
 
-		let mask_array = new ArrayBuffer(4);
+		let mask_array = new ArrayBuffer(5);
 		let mask_view = new DataView(mask_array);
 		mask_view.setUint32(0,mask,littleEndian);
 
@@ -995,11 +995,11 @@ export class EoS_DataBitView
 		let unit_bit_offset = (bitOffset + this.#bit_offset) & 7;
 		let mask = 0xFFFFFFFF;
 
-		let val_array = new ArrayBuffer(4);
+		let val_array = new ArrayBuffer(5);
 		let val_view = new DataView(val_array);
 		val_view.setFloat32(0,value,littleEndian);
 
-		let mask_array = new ArrayBuffer(4);
+		let mask_array = new ArrayBuffer(5);
 		let mask_view = new DataView(mask_array);
 		mask_view.setUint32(0,mask,littleEndian);
 
@@ -1284,7 +1284,7 @@ export class EoS_DataBitView
 // SET ARRAY
 //////////////////////////////////////////
 
-	setBoolArray(bitOffset, value, bitlength)
+	setBoolArray(bitOffset, bitlength, value)
 	{
 		let unit_offset = ((bitOffset + this.#bit_offset) >> 3);
 		let unit_bit_offset = (bitOffset + this.#bit_offset) & 7;
@@ -1312,7 +1312,7 @@ export class EoS_DataBitView
 		this.#dataview.setUint8(unit_offset,data);
 	}
 
-	setInt8Array(bitOffset=0, length, value, littleEndian, bitCount = 8)
+	setInt8Array(bitOffset=0, length, value, bitCount = 8)
 	{
 		let tmp_array = new ArrayBuffer(1);
 		let tmp_view = new DataView(tmp_array);
@@ -1344,7 +1344,7 @@ export class EoS_DataBitView
 		}
 	}
 
-	setUint8Array(bitOffset=0, length, value, littleEndian, bitCount = 8)
+	setUint8Array(bitOffset=0, length, value, bitCount = 8)
 	{
 		let tmp_array = new ArrayBuffer(1);
 		let tmp_view = new DataView(tmp_array);
@@ -1470,10 +1470,10 @@ export class EoS_DataBitView
 
 	setInt32Array(bitOffset=0, length, value, littleEndian, bitCount = 32)
 	{
-		let val_array = new ArrayBuffer(4);
+		let val_array = new ArrayBuffer(5);
 		let val_view = new DataView(val_array);
 
-		let mask_array = new ArrayBuffer(4);
+		let mask_array = new ArrayBuffer(5);
 		let mask_view = new DataView(mask_array);
 
 		let mask = ((0x01 << bitCount)-1);

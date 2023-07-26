@@ -218,7 +218,7 @@ export class EoS_AssemblyMember extends DataMapping
 
 	set iqflags(value)
 	{
-		this.#view.setBoolArray(0x0000007D,value,0x00000045);
+		this.#view.setBoolArray(0x0000007D,0x00000045,value);
 	}
 
 	get tactic()

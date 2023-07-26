@@ -51,7 +51,7 @@ export class EoS_Saveslot extends DataMapping
 
 		let checksum = new Uint32Array(2);
 
-		//console.log(i18n`Parsing EoS Savefile Slot`);
+		console.log(i18n`Parsing EoS Savefile Slot`);
 
 		let ident = this.ident;
 		if(ident != "POKE_DUN_SORA")

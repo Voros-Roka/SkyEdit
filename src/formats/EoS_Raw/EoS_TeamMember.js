@@ -110,7 +110,7 @@ export class EoS_TeamMember extends DataMapping
 
 	set flags(value)
 	{
-		this.#view.setBoolArray(0x00000001,value,0x00000004);
+		this.#view.setBoolArray(0x00000001,0x00000004,value);
 	}
 
 	get level()
@@ -320,7 +320,7 @@ export class EoS_TeamMember extends DataMapping
 
 	set iqflags(value)
 	{
-		this.#view.setBoolArray(0x0000017A,value,0x00000045);
+		this.#view.setBoolArray(0x0000017A,0x00000045,value);
 	}
 
 	get tactic()

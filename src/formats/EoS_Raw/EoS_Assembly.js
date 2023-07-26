@@ -61,7 +61,7 @@ export class EoS_Assembly extends DataMapping
 
 	set unknown310CE(value)
 	{
-		this.#view.setUint8Array(0x000310CE,value,8,8);
+		this.#view.setUint8Array(0x000310CE,8,value,8);
 	}
 
 	get unknown3110E()
@@ -86,12 +86,12 @@ export class EoS_Assembly extends DataMapping
 
 	get unknown31116()
 	{
-		return this.#view.getUint8Array(0x00031116,8,10);
+		return this.#view.getUint8Array(0x00031116,8,8);
 	}
 
 	set unknown31116(value)
 	{
-		this.#view.setUint8Array(0x00031116,value,8,10);
+		this.#view.setUint8Array(0x00031116,8,value,8);
 	}
 
 	get othermembers()

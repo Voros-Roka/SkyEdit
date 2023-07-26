@@ -33,7 +33,7 @@ export class EoS_TeamMemberMove extends DataMapping
 
 	set flags(value)
 	{
-		this.#view.setBoolArray(0x00000000,value,0x00000005);
+		this.#view.setBoolArray(0x00000000,0x00000005,value);
 	}
 
 	get id()

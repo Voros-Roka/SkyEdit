@@ -81,7 +81,7 @@ export class EoS_SOSMailHelper extends DataMapping
 
 	set flags(value)
 	{
-		this.#view.setBoolArray(0x00000000,value,0x00000004);
+		this.#view.setBoolArray(0x00000000,0x00000004,value);
 	}
 
 	get level()
@@ -221,7 +221,7 @@ export class EoS_SOSMailHelper extends DataMapping
 
 	set iqflags(value)
 	{
-		this.#view.setBoolArray(0x00000080,value,0x00000045);
+		this.#view.setBoolArray(0x00000080,0x00000045,value);
 	}
 
 	get tactic()

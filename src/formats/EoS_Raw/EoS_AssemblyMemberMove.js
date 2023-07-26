@@ -31,7 +31,7 @@ export class EoS_AssemblyMemberMove extends DataMapping
 
 	set flags(value)
 	{
-		this.#view.setBoolArray(0x00000000,value,0x00000004);
+		this.#view.setBoolArray(0x00000000,0x00000004,value);
 	}
 
 	get id()

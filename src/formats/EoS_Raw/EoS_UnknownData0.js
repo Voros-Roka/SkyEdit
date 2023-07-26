@@ -26,6 +26,6 @@ export class EoS_UnknownData0 extends DataMapping
 
 	set unknown000(value)
 	{
-		this.#view.setUint16Array(0x00000000,value,0x0000005,0x00000010);
+		this.#view.setUint16Array(0x00000000,0x0000005,value,true,0x00000010);
 	}
 }

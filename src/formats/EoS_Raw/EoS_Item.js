@@ -44,7 +44,7 @@ export class EoS_Item extends DataMapping
 
 	set flags(value)
 	{
-		this.#view.setBoolArray(0x00000001,value,0x00000007);
+		this.#view.setBoolArray(0x00000001,0x00000007,value);
 	}
 
 	get quantity()

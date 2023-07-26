@@ -270,7 +270,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set positionx(value) //
 	{
-		this.#view.setUint32Array(0x00000008,value,3,true);
+		this.#view.setUint32Array(0x00000008,3,value,true);
 	}
 
 	get positiony() //
@@ -280,7 +280,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set positiony(value) //
 	{
-		this.#view.setUint32Array(0x00000014,value,3,true);
+		this.#view.setUint32Array(0x00000014,3,value,true);
 	}
 
 	get positionz() //
@@ -290,7 +290,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set positionz(value) //
 	{
-		this.#view.setUint32Array(0x00000020,value,3,true);
+		this.#view.setUint32Array(0x00000020,3,value,true);
 	}
 
 	get recyclecount() //
@@ -350,7 +350,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set groundenterbackup(value) //
 	{
-		this.#view.setUint16Array(0x00000038,value,5,true);
+		this.#view.setUint16Array(0x00000038,5,value,true);
 	}
 
 	get groundgetoutbackup() //
@@ -360,7 +360,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set groundgetoutbackup(value) //
 	{
-		this.#view.setUint16Array(0x00000042,value,5,true);
+		this.#view.setUint16Array(0x00000042,5,value,true);
 	}
 
 	get groundmapbackup() //
@@ -370,7 +370,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set groundmapbackup(value) //
 	{
-		this.#view.setUint16Array(0x0000004C,value,5,true);
+		this.#view.setUint16Array(0x0000004C,5,value,true);
 	}
 
 	get groundplacebackup() //
@@ -380,7 +380,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set groundplacebackup(value) //
 	{
-		this.#view.setUint16Array(0x00000056,value,5,true);
+		this.#view.setUint16Array(0x00000056,5,value,true);
 	}
 
 	get dungeonselect() //
@@ -430,7 +430,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set dungeonenterbackup(value) //
 	{
-		this.#view.setUint16Array(0x00000068,value,5,true);
+		this.#view.setUint16Array(0x00000068,5,value,true);
 	}
 
 	get dungeonentermodebackup() //
@@ -440,7 +440,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set dungeonentermodebackup(value) //
 	{
-		this.#view.setUint16Array(0x00000072,value,5,true);
+		this.#view.setUint16Array(0x00000072,5,value,true);
 	}
 
 	get dungeonenterindexbackup() //
@@ -450,7 +450,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set dungeonenterindexbackup(value) //
 	{
-		this.#view.setUint16Array(0x0000007C,value,5,true);
+		this.#view.setUint16Array(0x0000007C,5,value,true);
 	}
 
 	get herofirstkind() //
@@ -510,7 +510,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set itembackup(value) //
 	{
-		this.#view.setUint16Array(0x00000090,value,2,true);
+		this.#view.setUint16Array(0x00000090,2,value,true);
 	}
 
 	get itembackupkurekure() //
@@ -520,7 +520,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set itembackupkurekure(value) //
 	{
-		this.#view.setUint16Array(0x00000094,value,2,true);
+		this.#view.setUint16Array(0x00000094,2,value,true);
 	}
 
 	get itembackuptake() //
@@ -530,7 +530,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set itembackuptake(value) //
 	{
-		this.#view.setUint16Array(0x00000098,value,2,true);
+		this.#view.setUint16Array(0x00000098,2,value,true);
 	}
 
 	get itembackupget() //
@@ -540,7 +540,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set itembackupget(value) //
 	{
-		this.#view.setUint16Array(0x0000009C,value,2,true);
+		this.#view.setUint16Array(0x0000009C,2,value,true);
 	}
 
 	get requestthanksresultkind() //
@@ -580,7 +580,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set dungeonenterfrequencybackup(value) //
 	{
-		this.#view.setUint16Array(0x000000A6,value,5,true);
+		this.#view.setUint16Array(0x000000A6,5,value,true);
 	}
 
 	get scenarioBalanceflag() //
@@ -660,7 +660,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set positiondirection(value) //
 	{
-		this.#view.setUint8Array(0x000000B7,value,2);
+		this.#view.setUint8Array(0x000000B7,2,value);
 	}
 
 	get scenarioselect() //
@@ -670,7 +670,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set scenarioselect(value) //
 	{
-		this.#view.setUint8Array(0x000000BA,value,2);
+		this.#view.setUint8Array(0x000000BA,2,value);
 	}
 
 	get scenariomain() //
@@ -680,7 +680,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set scenariomain(value) //
 	{
-		this.#view.setUint8Array(0x000000BC,value,2);
+		this.#view.setUint8Array(0x000000BC,2,value);
 	}
 
 	get scenarioside() //
@@ -690,7 +690,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set scenarioside(value) //
 	{
-		this.#view.setUint8Array(0x000000BE,value,2);
+		this.#view.setUint8Array(0x000000BE,2,value);
 	}
 
 	get scenariosub1() //
@@ -700,7 +700,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set scenariosub1(value) //
 	{
-		this.#view.setUint8Array(0x000000C0,value,2);
+		this.#view.setUint8Array(0x000000C0,2,value);
 	}
 
 	get scenariosub2() //
@@ -710,7 +710,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set scenariosub2(value) //
 	{
-		this.#view.setUint8Array(0x000000C2,value,2);
+		this.#view.setUint8Array(0x000000C2,2,value);
 	}
 
 	get scenariosub3() //
@@ -720,7 +720,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set scenariosub3(value) //
 	{
-		this.#view.setUint8Array(0x000000C4,value,2);
+		this.#view.setUint8Array(0x000000C4,2,value);
 	}
 
 	get scenariosub4() //
@@ -730,7 +730,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set scenariosub4(value) //
 	{
-		this.#view.setUint8Array(0x000000C6,value,2);
+		this.#view.setUint8Array(0x000000C6,2,value);
 	}
 
 	get scenariosub5() //
@@ -740,7 +740,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set scenariosub5(value) //
 	{
-		this.#view.setUint8Array(0x000000C8,value,2);
+		this.#view.setUint8Array(0x000000C8,2,value);
 	}
 
 	get scenariosub6() //
@@ -750,7 +750,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set scenariosub6(value) //
 	{
-		this.#view.setUint8Array(0x000000CA,value,2);
+		this.#view.setUint8Array(0x000000CA,2,value);
 	}
 
 	get scenariosub7() //
@@ -760,7 +760,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set scenariosub7(value) //
 	{
-		this.#view.setUint8Array(0x000000CC,value,2);
+		this.#view.setUint8Array(0x000000CC,2,value);
 	}
 
 	get scenariosub8() //
@@ -770,7 +770,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set scenariosub8(value) //
 	{
-		this.#view.setUint8Array(0x000000CE,value,2);
+		this.#view.setUint8Array(0x000000CE,2,value);
 	}
 
 	get crystalcolor1() //
@@ -830,7 +830,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set scenarioselectbackup(value) //
 	{
-		this.#view.setUint8Array(0x000000D5,value,8);
+		this.#view.setUint8Array(0x000000D5,8,value);
 	}
 
 	get groundenterlink() //
@@ -850,7 +850,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set groundenterlinkbackup(value) //
 	{
-		this.#view.setUint8Array(0x000000DE,value,5);
+		this.#view.setUint8Array(0x000000DE,5,value);
 	}
 
 	get dungeonresult() //
@@ -880,7 +880,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set dungeonresultbackup(value) //
 	{
-		this.#view.setUint8Array(0x000000E5,value,5);
+		this.#view.setUint8Array(0x000000E5,5,value);
 	}
 
 	get groundstartmodebackup() //
@@ -890,7 +890,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set groundstartmodebackup(value) //
 	{
-		this.#view.setUint8Array(0x000000EA,value,5);
+		this.#view.setUint8Array(0x000000EA,5,value);
 	}
 
 	get requestclearcount() //
@@ -940,7 +940,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set playerkindbackup(value) //
 	{
-		this.#view.setUint8Array(0x000000F4,value,5);
+		this.#view.setUint8Array(0x000000F4,5,value);
 	}
 
 	get attendant1kindbackup() //
@@ -950,7 +950,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set attendant1kindbackup(value) //
 	{
-		this.#view.setUint8Array(0x000000F8,value,5);
+		this.#view.setUint8Array(0x000000F8,5,value);
 	}
 
 	get attendant2kindbackup() //
@@ -960,7 +960,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set attendant2kindbackup(value) //
 	{
-		this.#view.setUint8Array(0x000000FD,value,5);
+		this.#view.setUint8Array(0x000000FD,5,value);
 	}
 
 	get worldmaplevel() //
@@ -1040,7 +1040,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set sideflags(value) //
 	{
-		this.#view.setBoolArray(0x0000011B,value,1)
+		this.#view.setBoolArray(0x0000011B,1,value)
 	}
 
 	get scenariomainflags()
@@ -1050,7 +1050,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set scenariomainflags(value)
 	{
-		this.#view.setBoolArray(0x0000011C,value,16)
+		this.#view.setBoolArray(0x0000011C,16,value)
 	}
 
 	get scenariotalkflags()
@@ -1060,7 +1060,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set scenariotalkflags(value)
 	{
-		this.#view.setBoolArray(0x0000012C,value,32)
+		this.#view.setBoolArray(0x0000012C,32,value)
 	}
 
 	get scenariomainflagsbackup()
@@ -1070,7 +1070,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set scenariomainflagsbackup(value)
 	{
-		this.#view.setBoolArray(0x0000014C,value,64)
+		this.#view.setBoolArray(0x0000014C,64,value)
 	}
 
 	get specialepisodeopen()
@@ -1080,7 +1080,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set specialepisodeopen(value)
 	{
-		this.#view.setBoolArray(0x0000018C,value,1)
+		this.#view.setBoolArray(0x0000018C,1,value)
 	}
 
 	get specialepisodeopenold()
@@ -1090,7 +1090,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set specialepisodeopenold(value)
 	{
-		this.#view.setBoolArray(0x0000018D,value,1)
+		this.#view.setBoolArray(0x0000018D,1,value)
 	}
 
 	get specialepisodeconquest()
@@ -1100,7 +1100,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set specialepisodeconquest(value)
 	{
-		this.#view.setBoolArray(0x0000018E,value,1)
+		this.#view.setBoolArray(0x0000018E,1,value)
 	}
 
 	get performanceprogress()
@@ -1110,7 +1110,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set performanceprogress(value)
 	{
-		this.#view.setBoolArray(0x0000018F,value,8)
+		this.#view.setBoolArray(0x0000018F,8,value)
 	}
 
 	get dungeonopenlist()
@@ -1120,7 +1120,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set dungeonopenlist(value)
 	{
-		this.#view.setBoolArray(0x00000197,value,32)
+		this.#view.setBoolArray(0x00000197,32,value)
 	}
 
 	get dungeonenterlist()
@@ -1130,7 +1130,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set dungeonenterlist(value)
 	{
-		this.#view.setBoolArray(0x000001B7,value,32)
+		this.#view.setBoolArray(0x000001B7,32,value)
 	}
 
 	get dungeonarrivelist()
@@ -1140,7 +1140,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set dungeonarrivelist(value)
 	{
-		this.#view.setBoolArray(0x000001D7,value,32)
+		this.#view.setBoolArray(0x000001D7,32,value)
 	}
 
 	get dungeonconquestlist()
@@ -1150,7 +1150,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set dungeonconquestlist(value)
 	{
-		this.#view.setBoolArray(0x000001F7,value,32)
+		this.#view.setBoolArray(0x000001F7,32,value)
 	}
 
 	get dungeonpresentlist()
@@ -1160,7 +1160,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set dungeonpresentlist(value)
 	{
-		this.#view.setBoolArray(0x00000217,value,32)
+		this.#view.setBoolArray(0x00000217,32,value)
 	}
 
 	get dungeonrequestlist()
@@ -1170,7 +1170,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set dungeonrequestlist(value)
 	{
-		this.#view.setBoolArray(0x00000237,value,32)
+		this.#view.setBoolArray(0x00000237,32,value)
 	}
 
 	get worldmapmarknormallist()
@@ -1180,7 +1180,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set worldmapmarknormallist(value)
 	{
-		this.#view.setBoolArray(0x00000257,value,40)
+		this.#view.setBoolArray(0x00000257,40,value)
 	}
 
 	get worldmapmarkspeciallist()
@@ -1190,7 +1190,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set worldmapmarkspeciallist(value)
 	{
-		this.#view.setBoolArray(0x0000027F,value,40)
+		this.#view.setBoolArray(0x0000027F,40,value)
 	}
 
 	get stationitemstatic()
@@ -1200,7 +1200,7 @@ export class EoS_ScriptVars extends DataMapping
 
 	set stationitemstatic(value)
 	{
-		this.#view.setBoolArray(0x000002A7,value,4)
+		this.#view.setBoolArray(0x000002A7,4,value)
 	}
 
 	get stationitemtemp()
@@ -1210,27 +1210,27 @@ export class EoS_ScriptVars extends DataMapping
 
 	set stationitemtemp(value)
 	{
-		this.#view.setBoolArray(0x000002AB,value,4)
+		this.#view.setBoolArray(0x000002AB,4,value)
 	}
 
 	get deliveritemstatic()
 	{
-		return this.#view.getBoolArray(0x000002AF,2);
+		return this.#view.getBoolArray(0x000002AF,4);
 	}
 
 	set deliveritemstatic(value)
 	{
-		this.#view.setBoolArray(0x000002AF,value,2)
+		this.#view.setBoolArray(0x000002AF,4,value)
 	}
 
 	get deliveritemtemp()
 	{
-		return this.#view.getBoolArray(0x000002B1,2);
+		return this.#view.getBoolArray(0x000002B1,4);
 	}
 
 	set deliveritemtemp(value)
 	{
-		this.#view.setBoolArray(0x000002B1,value,2)
+		this.#view.setBoolArray(0x000002B1,4,value)
 	}
 
 	get otherflags()
@@ -1240,6 +1240,6 @@ export class EoS_ScriptVars extends DataMapping
 
 	set otherflags(value)
 	{
-		this.#view.setBoolArray(0x000002B3,value,1)
+		this.#view.setBoolArray(0x000002B3,1,value)
 	}
 }

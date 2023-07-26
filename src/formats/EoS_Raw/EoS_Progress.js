@@ -41,7 +41,7 @@ export class EoS_Progress extends DataMapping
 
 	set unknown000(value)
 	{
-		this.#view.setBoolArray(0x00000000,value,0x00000483);
+		this.#view.setBoolArray(0x00000000,0x00000483,value);
 	}
 
 	get dungeontips()
@@ -51,7 +51,7 @@ export class EoS_Progress extends DataMapping
 
 	set dungeontips(value)
 	{
-		this.#view.setBoolArray(0x00000483,value,0x0000001F);
+		this.#view.setBoolArray(0x00000483,0x0000001F,value);
 	}
 
 	get pokemonattacked()
@@ -61,7 +61,7 @@ export class EoS_Progress extends DataMapping
 
 	set pokemonattacked(value)
 	{
-		this.#view.setBoolArray(0x000004A2,value,0x00000483);
+		this.#view.setBoolArray(0x000004A2,0x00000483,value);
 	}
 
 	get exclusivpokemon()
@@ -71,7 +71,7 @@ export class EoS_Progress extends DataMapping
 
 	set exclusivpokemon(value)
 	{
-		this.#view.setBoolArray(0x00000925,value,0x00000017);
+		this.#view.setBoolArray(0x00000925,0x00000017,value);
 	}
 
 	get dungeonmaxfloor()

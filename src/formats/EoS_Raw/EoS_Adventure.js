@@ -125,7 +125,7 @@ export class EoS_Adventure extends DataMapping
 
 	set completionflags(value)
 	{
-		this.#view.setBoolArray(0x00000062,value,0x00000080);
+		this.#view.setBoolArray(0x00000062,0x00000080,value);
 	}
 
 	get joinedcount()
@@ -225,7 +225,7 @@ export class EoS_Adventure extends DataMapping
 
 	set joinedflags(value)
 	{
-		this.#view.setBoolArray(0x0000017F,value,0x000004A0);
+		this.#view.setBoolArray(0x0000017F,0x000004A0,value);
 	}
 
 	get battledflags()
@@ -235,7 +235,7 @@ export class EoS_Adventure extends DataMapping
 
 	set battledflags(value)
 	{
-		this.#view.setBoolArray(0x0000061F,value,0x000004A0);
+		this.#view.setBoolArray(0x0000061F,0x000004A0,value);
 	}
 
 	get moveslearnedflags()
@@ -245,7 +245,7 @@ export class EoS_Adventure extends DataMapping
 
 	set moveslearnedflags(value)
 	{
-		this.#view.setBoolArray(0x00000ABF,value,0x00000220);
+		this.#view.setBoolArray(0x00000ABF,0x00000220,value);
 	}
 
 	get itemsaquiredflags()
@@ -255,7 +255,7 @@ export class EoS_Adventure extends DataMapping
 
 	set itemsaquiredflags(value)
 	{
-		this.#view.setBoolArray(0x00000CDF,value,0x00000580);
+		this.#view.setBoolArray(0x00000CDF,0x00000580,value);
 	}
 
 	get specialchallengeflags()
@@ -265,7 +265,7 @@ export class EoS_Adventure extends DataMapping
 
 	set specialchallengeflags(value)
 	{
-		this.#view.setBoolArray(0x0000125F,value,0x00000020);
+		this.#view.setBoolArray(0x0000125F,0x00000020,value);
 	}
 
 	get sentrydutypoints()

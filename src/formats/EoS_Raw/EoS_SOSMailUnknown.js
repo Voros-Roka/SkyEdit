@@ -27,6 +27,6 @@ export class EoS_SOSMailUnknown extends DataMapping
 
 	set unknown00(value)
 	{
-		this.#view.setUint32Array(0x00000000,value,2,32);
+		this.#view.setUint32Array(0x00000000,2,value,true,32);
 	}
 }
