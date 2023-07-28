@@ -395,7 +395,7 @@ function value_array_onSpinDownClick(event)
 
 function value_array_onInputChange(event)
 {
-	tgt = event.currentTarget;
+	let tgt = event.currentTarget;
 	let value = value_array_readValue(tgt);
 	value_array_setValue(value,tgt);
 }
