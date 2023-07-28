@@ -362,7 +362,7 @@ function value_onSpinDownClick(event)
 
 function value_onInputChange(event)
 {
-	tgt = event.currentTarget;
+	let tgt = event.currentTarget;
 	let value = value_readValue(tgt);
 	value_setValue(value,tgt);
 }
