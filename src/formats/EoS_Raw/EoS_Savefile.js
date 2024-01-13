@@ -43,7 +43,7 @@ export class EoS_Savefile extends DataMapping
 		{
 			throw Error(i18n`File is too small, expected at least 131072 bytes but file is ${data.byteLength}`);
 		}
-		else if(this.#file_size > 131072)
+		else if(this.#file_size > 262144)
 		{
 			//console.log(i18n`File coult be a desmume save file`);
 			/*let desmume_string1 = buffer.getString("utf-8",0x00040000,82);
