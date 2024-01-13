@@ -97,7 +97,7 @@ export class EoS_Saveslot extends DataMapping
 		console.log(i18n`unknowndatacount is '${this.unknowndatacount.toString(16)}'`);*/
 
 		this.#script_vars = new EoS_ScriptVars(new EoS_DataView(this.#view,0x00000038,1024));
-		this.#assembly = new EoS_Assembly(new EoS_DataBitView(this.#view,0x00000464*8,0x00007F6B*8));
+		this.#assembly = new EoS_Assembly(new EoS_DataBitView(this.#view,0x00000464*8,0x00007F6B));
 		this.#teams = new EoS_Teams(new EoS_DataBitView(this.#view,0x000083CF*8,0x000005DC*8));
 		this.#progress = new EoS_Progress(new EoS_DataBitView(this.#view,0x000089AB*8,0x00001F7*8));
 		this.#items = new EoS_Items(new EoS_DataBitView(this.#view,0x00008BA2*8,0x0000DAC*8));
